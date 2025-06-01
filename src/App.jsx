@@ -4,7 +4,8 @@ import "./App.css";
 import SearchForm from "./components/SearchForm";
 import { fetchArticlesWithTopic } from "./articles-api";
 import UseRef4 from "./lessons/UseRef4";
-import Context from "./lessons/Context";
+import Context from "./lessons/contecstJS/Context";
+import CreateRouterApp from "./lessons/reactRouter/CreateRouterApp";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -30,7 +31,8 @@ function App() {
 
   return (
     <div>
-      <Context />
+      <CreateRouterApp />
+      {/* <Context /> */}
       {/* <UseRef4 /> */}
       <h1>Latest articles</h1>
       <SearchForm onSearch={handleSearch} />
