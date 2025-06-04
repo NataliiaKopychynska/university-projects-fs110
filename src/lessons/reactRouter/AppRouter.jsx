@@ -1,12 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Products from "./Products";
-import NotFound from "./NotFound";
+// import Home from "./Home";
+// import About from "./About";
+// import Products from "./Products";
+// import NotFound from "./NotFound";
 import clsx from "clsx";
 import css from "./AppRouter";
-import ProductDetails from "./ProductDetails";
+// import ProductDetails from "./ProductDetails";
+
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./About"));
+const Products = lazy(() => import("./Products"));
+const NotFound = lazy(() => import("./NotFound"));
+const ProductDetails = lazy(() => import("./ProductDetails"));
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -27,13 +33,15 @@ function AppRouter() {
         </NavLink>
       </nav>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:productId" element={<ProductDetails />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<div>Loading..</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId" element={<ProductDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }

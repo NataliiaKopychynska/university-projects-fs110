@@ -6,6 +6,7 @@ import { fetchArticlesWithTopic } from "./articles-api";
 import UseRef4 from "./lessons/UseRef4";
 import Context from "./lessons/contecstJS/Context";
 import CreateRouterApp from "./lessons/reactRouter/CreateRouterApp";
+import ReduxApp from "./lessons/reduxAndReduxToolkit/old/ReduxApp";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -31,10 +32,11 @@ function App() {
 
   return (
     <div>
-      <CreateRouterApp />
+      {/* <CreateRouterApp /> */}
+      <ReduxApp />
       {/* <Context /> */}
       {/* <UseRef4 /> */}
-      <h1>Latest articles</h1>
+      {/* <h1>Latest articles</h1>
       <SearchForm onSearch={handleSearch} />
 
       {loading && <p>Loading data, please wait...</p>}
@@ -53,7 +55,7 @@ function App() {
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </div>
   );
 }
