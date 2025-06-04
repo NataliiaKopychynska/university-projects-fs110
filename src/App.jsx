@@ -6,7 +6,7 @@ import { fetchArticlesWithTopic } from "./articles-api";
 import UseRef4 from "./lessons/UseRef4";
 import Context from "./lessons/contecstJS/Context";
 import CreateRouterApp from "./lessons/reactRouter/CreateRouterApp";
-import ReduxApp from "./lessons/reduxAndReduxToolkit/old/ReduxApp";
+import ReduxApp from "./lessons/reduxAndReduxToolkit/new/ReduxApp";
 
 function App() {
   const [articles, setArticles] = useState([]);
